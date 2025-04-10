@@ -10,8 +10,10 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/userContext";
 import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+import appStore from "./store/appStore";
 import Cart from "./components/Cart";
+import Shimmer from "./components/Shimmer";
+
 
 //import Grocery from "./components/Grocery";
 
@@ -33,7 +35,7 @@ const AppLayout = () => {
   useEffect(() => {
     // Make an API call and send username and password
     const data = {
-      name: "Akshay Saini",
+      name: "Tharuni",
     };
     setUserName(data.name);
   }, []);
@@ -62,7 +64,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: (
-          <Suspense fallback={<h1>Loading....</h1>}>
+          <Suspense fallback={<Shimmer/>}>
             <About />
           </Suspense>
         ),
@@ -74,7 +76,7 @@ const appRouter = createBrowserRouter([
       {
         path: "/grocery",
         element: (
-          <Suspense fallback={<h1>Loading....</h1>}>
+          <Suspense fallback={<Shimmer/>}>
             <Grocery />
           </Suspense>
         ),

@@ -9,73 +9,6 @@ import { useContext } from "react";
 
 
 
-//Normal JS Variable
-// let listOfRestraunts2=[
-//     {
-//     info:{
-//         "id": "84524",
-//         "name": "Arumugam Mess",
-//         "cloudinaryImageId": "fthkmds1nusngnbto3e3",
-//         "costForTwo": "₹450 for two",
-//         "cuisines": [
-//           "Biryani",
-//           "Grill",
-//           "Chinese",
-//           "South Indian",
-//           "North Indian",
-//           "Fast Food"
-//         ],
-//         "avgRating": 3.3,
-//         sla:{
-//             "deliveryTime": 29
-//             }
-          
-//         }},
-//     {
-
-//     info:{
-//         "id": "84525",
-//         "name": "Sankar Mess",
-//         "cloudinaryImageId": "fthkmds1nusngnbto3e3",
-//         "costForTwo": "₹450 for two",
-//         "cuisines": [
-//           "Biryani",
-//           "Grill",
-//           "Chinese",
-//           "South Indian",
-//           "North Indian",
-//           "Fast Food"
-//         ],
-//         "avgRating": 4.4,
-//         sla:{
-//                 "deliveryTime": 29
-//         }
-//     }},
-//     {
-//     info:{
-//         "id": "84526",
-//         "name": "Kumar Mess",
-//         "cloudinaryImageId": "fthkmds1nusngnbto3e3",
-//         "costForTwo": "₹450 for two",
-//         "cuisines": [
-//           "Biryani",
-//           "Grill",
-//           "Chinese",
-//           "South Indian",
-//           "North Indian",
-//           "Fast Food"
-//         ],
-//         "avgRating": 4.4,
-//         sla:{
-//                 "deliveryTime": 29
-//         }
-          
-//     }
-//     }]
-
-
-
-
 
 const Body=()=>{
 
@@ -115,6 +48,7 @@ const Body=()=>{
 
     return listOfRestraunts.length ===0 ? (<Shimmer/>) : (
     <div className="">
+
         <div className="flex">
              <div className="m-4 p-4 flex items-center" >
             <input type="text" className="border border-black" value={searchText} onChange={(e)=>{

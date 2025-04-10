@@ -115,3 +115,19 @@ whenever changes in state variable react triggers the reconcilation cycle(re-ren
 --Slice(cartSlice)
 --Dispatch(action)
 --Selector
+
+
+Types of Testing(Developer)
+
+--Unit Testing
+--Integrated Testing
+--End to End Testing (E2E)
+
+
+React Testing Library
+   -- Install React Testing Library
+   --Install Jest
+   --Install Babel dependencies(In Jest Website)
+   --Configure Babel dependencies(create new file)
+   --disable default configuration 
+      1.Go to parcel -> Javascript -> Babel -> parcel.rc(create file)->Configure

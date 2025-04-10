@@ -1,5 +1,5 @@
-import { clearitems,removeitems } from "../utils/cartSlice";
-import Itemlist from "./Itemlist";
+import { clearitems,removeitems } from "../store/cartSlice";
+import Itemlist from "./Itemlist"
 import { useDispatch, useSelector } from "react-redux"; 
 import { Link } from "react-router-dom";
 
@@ -46,7 +46,7 @@ const Cart=()=>{
             <div className="pl-[500]"> 
             <button className="bg-gray-500 p-2 m-2 rounded-md text-white" onClick={handleClearItems} >Clear Cart</button>
             <button className="bg-gray-300 p-2  rounded-md text-black mt-8 ml-12 font-bold" onClick={ handleRemoveItems} >Remove</button>
-            
+           
             
             </div>
         </div> 

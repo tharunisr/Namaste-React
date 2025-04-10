@@ -1,7 +1,8 @@
 import { CDN_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { additems,removeitems} from "../utils/cartSlice";
+import { additems,removeitems} from "../store/cartSlice";
 import { useSelector } from "react-redux";
+import { useState } from "react";
 
 const Itemlist=({items,dummy})=>{
 
@@ -14,6 +15,7 @@ const Itemlist=({items,dummy})=>{
 
     const dispatch=useDispatch();
     const handleAddItem=(items)=>{
+    
        dispatch(additems(items));
        {window.alert(items.card.info.name + " Added Succesfully")}
 
@@ -32,16 +34,16 @@ const Itemlist=({items,dummy})=>{
        
         <div className="">
               {items.map((items,index)=>(
-                <div key={`${items.card.info.id}-${index}`} className="m-2 p-2 border-b-2 border-gray-200 text-left flex justify-between">
+                <div key={`${items?.card?.info?.id}-${index}`} className="m-2 p-2 border-b-2 border-gray-200 text-left flex justify-between">
              
               
                 <div className="w-10/12">
                     <div className="py-2">
                          <span className="font-medium">{items.card.info.name}</span><br></br>
-                         <span>₹{items.card.info.price/100}</span>
+                         <span>₹{items?.card?.info?.price/100}</span>
                         
                     </div>
-                     <div className="text-sm text-gray-500">{items.card.info.description} 
+                     <div className="text-sm text-gray-500">{items?.card?.info?.description} 
                    
                      </div>
                      

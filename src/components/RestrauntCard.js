@@ -26,7 +26,7 @@ export const promotedLabel=(RestrauntCard)=>{
     return (props)=>{
         return(
             <div className="relative">
-                <h1 className="bg-[#E0E0E0] text-[#383838] rounded-sm font-thin absolute bottom-[205] left-5">Ad</h1>
+                <h1 className="bg-[#f4dddd] text-[#f15555] rounded-sm px-1 font-thin absolute bottom-[425] left-5 text-lg">Ad</h1>
                 <RestrauntCard{...props} />
             </div>
         )
