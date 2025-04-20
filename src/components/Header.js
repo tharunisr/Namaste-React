@@ -1,9 +1,10 @@
-import { LOGO_URL } from "../utils/constants";
 import { useState,useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/userContext";
 import { useSelector } from "react-redux";
+import {LOGO_URL} from "../utils/constants"
+import GrocerycartItems from "./GrocerycartItems";
 
 
 
@@ -15,17 +16,23 @@ const Header=()=>{
     // console.log(loggedInUser);
 
    const cartItems=useSelector((store)=>store.cart.items)
+   const groceryItems=useSelector((store)=>store.Grocerycart.items);
+
 //    console.log(cartItems);
     // useEffect(()=>{
     //     console.log("Header use Effect called");
     // },[btnnameReact])
 
     const onlineStatus=useOnlineStatus();
+
+    // const logo = new URL('../utils/images/food_drink.png', import.meta.url).href;
+    // console.log(logo);
     // console.log("Header Component");
     return (
+        
     <div className="bg-blue-100 flex justify-between shadow-sm"> 
     <div className="logo-container">
-        <img className="w-1/4" src={LOGO_URL}></img>
+        <img className="w-[30%] bg-red-200" src={LOGO_URL} alt="logo"></img>
     </div>
     
     <div className="flex items-center">
@@ -51,7 +58,13 @@ const Header=()=>{
                 <Link to="/cart">
                 🛒Cart - ({cartItems.length} items)
                      </Link></li>
-                   
+
+        <li className="font-bold px-2">
+                <Link to="/grocerycart">
+                🛒Grocerycart - ({groceryItems.length} items)
+                     </Link></li>
+
+
 
             <li>
                 <div>

@@ -10,7 +10,7 @@ const Itemlist=({items,dummy})=>{
     // console.log(dummy);
 
     const totalItems=useSelector((store)=>store.cart.items)
-    console.log(totalItems);
+    // console.log(totalItems);
 
 
     const dispatch=useDispatch();
@@ -32,9 +32,9 @@ const Itemlist=({items,dummy})=>{
     return (
         
        
-        <div className="">
+        <div >
               {items.map((items,index)=>(
-                <div key={`${items?.card?.info?.id}-${index}`} className="m-2 p-2 border-b-2 border-gray-200 text-left flex justify-between">
+                <div data-testid="food-items" key={`${items?.card?.info?.id}-${index}`} className="m-2 p-2 border-b-2 border-gray-200 text-left flex justify-between">
              
               
                 <div className="w-10/12">

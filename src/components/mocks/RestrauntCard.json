@@ -1,0 +1,95 @@
+{
+    "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+    "info": {
+        "id": "82474",
+        "name": "A2B - Adyar Ananda Bhavan",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/15/db5a8033-8fa3-4949-a6d3-20820bba0cdd_82474.jpg",
+        "locality": "Villakkuthoon",
+        "areaName": "Periyar",
+        "costForTwo": "₹300 for two",
+        "cuisines": [
+            "South Indian",
+            "North Indian",
+            "Sweets",
+            "Chinese"
+        ],
+        "avgRating": 4.5,
+        "veg": true,
+        "parentId": "22",
+        "avgRatingString": "4.5",
+        "totalRatingsString": "41K+",
+        "promoted": true,
+        "adTrackingId": "cid=27840151~p=0~adgrpid=27840151#ag1~mp=SWIGGY_IN~bl=FOOD~aet=RESTAURANT~aeid=82474~plpr=COLLECTION~eid=efcdfc24-597d-49d1-ab84-5c5e2b3675d9~srvts=1744868340538~collid=80435",
+        "sla": {
+            "deliveryTime": 11,
+            "lastMileTravel": 1.4,
+            "serviceability": "SERVICEABLE",
+            "slaString": "10-15 mins",
+            "lastMileTravelString": "1.4 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-04-17 22:30:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "bolt/bolt%206.png",
+                    "description": "bolt!"
+                }
+            ]
+        },
+        "isOpen": true,
+        "aggregatedDiscountInfoV2": {},
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "textBased": {},
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "imageId": "bolt/bolt%206.png",
+                                "description": "bolt!"
+                            }
+                        }
+                    ]
+                },
+                "textExtendedBadges": {}
+            }
+        },
+        "orderabilityCommunication": {
+            "title": {},
+            "subTitle": {},
+            "message": {},
+            "customIcon": {},
+            "commsStyling": {}
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+        "campaignId": "27840151"
+    },
+    "analytics": {},
+    "cta": {
+        "link": "swiggy://menu?restaurant_id=82474",
+        "text": "RESTAURANT_MENU",
+        "type": "DEEPLINK"
+    },
+    "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food"
+}

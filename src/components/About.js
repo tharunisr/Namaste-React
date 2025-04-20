@@ -28,7 +28,7 @@ class About extends Component{
   }
 
   render(){
-    console.log("Parent render");
+    // console.log("Parent render");
     return(
       <div>
       <div className="font-bold text-xl mb-2 text-center m-4 p-4">Delight – A React-Based Food Ordering Website</div>

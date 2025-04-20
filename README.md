@@ -131,3 +131,19 @@ React Testing Library
    --Configure Babel dependencies(create new file)
    --disable default configuration 
       1.Go to parcel -> Javascript -> Babel -> parcel.rc(create file)->Configure
+   -- npm run jest (no test found)if no errors
+   --Jest Configuration (npx jest --init)
+      --1.No, 2.jsdom(browser-like),3.Yes, 4.Babel, 5.Yes 
+   --Install jest-environment-jsdom(jsdom Library)
+
+
+To save a file in test, createb a folder __tests__
+   Header.test.js
+   Header.test.ts
+   Header.spec.js
+   Header.sepc.ts
+
+npm install -D @babel/preset-react to make jsx work in test cases
+  --@babel/preset-react include this in the babel config file
+
+npm install -D @testing-library/jest-dom

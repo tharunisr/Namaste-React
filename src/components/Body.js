@@ -22,7 +22,7 @@ const Body=()=>{
     
     const RestaurantPromoted=promotedLabel(RestrauntCard); 
 
-    const {loggedInUser,setuserName}=useContext(userContext)
+    const {loggedInUser,setUserName}=useContext(userContext)
 
 
 
@@ -51,7 +51,7 @@ const Body=()=>{
 
         <div className="flex">
              <div className="m-4 p-4 flex items-center" >
-            <input type="text" className="border border-black" value={searchText} onChange={(e)=>{
+            <input type="text" data-testid="searchInput" className="border border-black" value={searchText} onChange={(e)=>{
                 setSearchText(e.target.value);
             }}/>
             <button className="px-2 py-1 bg-blue-300 rounded-md m-4" onClick={
@@ -73,13 +73,13 @@ const Body=()=>{
                     
                     });
                     setfilteredRestraunt(filtered);
-                }}>Top Rated Restaurant</button>
+                }}>Top Rated Restraunts</button>
 
         </div>
 
         <div className="m-4 p-4 flex items-center">
         <label>UserName : </label>
-        <input className="border border-black m-5" value={loggedInUser} onChange={(e)=>setuserName(e.target.value)}></input>
+        <input className="border border-black m-5" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)}></input>
 
         </div>
             

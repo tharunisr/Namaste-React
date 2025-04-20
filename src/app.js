@@ -6,13 +6,16 @@ import Body from "./components/Body";
 //import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-import RestaurantMenu from "./components/RestaurantMenu";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestrauntMenu from "./components/RestrauntMenu";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 import UserContext from "./utils/userContext";
 import { Provider } from "react-redux";
 import appStore from "./store/appStore";
 import Cart from "./components/Cart";
 import Shimmer from "./components/Shimmer";
+import Grocerycart from "./components/GrocerycartItems";
+import GrocerycartItems from "./components/GrocerycartItems";
+
 
 
 //import Grocery from "./components/Grocery";
@@ -83,16 +86,25 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurants/:resId",
-        element: <RestaurantMenu />,
+        element: <RestrauntMenu/>,
       },
       {
         path: "/cart",
         element: <Cart />,
       },
+      {
+        path: "/grocerycart",
+        element: <GrocerycartItems />,
+      },
     ],
     errorElement: <Error />,
   },
 ]);
+
+<RouterProvider
+  future={{ v7_startTransition: false }}
+  router={appRouter}
+/>
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
