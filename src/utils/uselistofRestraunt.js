@@ -11,7 +11,7 @@ const uselistofrestraunt=()=>{
 
     const fetchData =async () =>{
         // const data=await fetch("https://68050b56ca467c15be681688.mockapi.io/swiggy/restraunts/list/restrauntlist");
-        const data=await fetch("http://localhost:5000/api/restaurants")
+        const data=await fetch("https://namaste-react-ilv4.onrender.com/api/restaurants")
         const json=await data.json();
         
         // console.log(json);
