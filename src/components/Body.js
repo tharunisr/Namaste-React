@@ -1,12 +1,11 @@
 import RestrauntCard,{promotedLabel} from "./RestrauntCard";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import uselistofRestraunt from "../utils/uselistofRestraunt";
 import userContext from "../utils/userContext";
 import { useContext } from "react";
-
 
 
 
@@ -19,15 +18,12 @@ const Body=()=>{
         filteredRestraunt,
         setlistofRestraunts,
         setfilteredRestraunt} = uselistofRestraunt();
+
+      
     
     const RestaurantPromoted=promotedLabel(RestrauntCard); 
 
-    const {loggedInUser,setUserName}=useContext(userContext)
-
-
-
-
-    
+    const {loggedInUser,setUserName}=useContext(userContext);
 
 
     // console.log("Body rendered", listOfRestraunts);
@@ -89,6 +85,7 @@ const Body=()=>{
             <RestrauntCard resData={resList[1]} /> */}
             {/* const listOfRestaurants = response.restaurants; */}
 
+            
             {filteredRestraunt.map((restraunt) => 
                 
                 
