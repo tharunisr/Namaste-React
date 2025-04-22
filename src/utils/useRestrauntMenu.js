@@ -13,10 +13,7 @@ const useRestrauntMenu=(resId)=>{
     const fetchData=async()=>{
         // const data=await fetch(MENU_API + resId);
         const data=await 
-        fetch("http://localhost:5000/api/menu/" + resId, {
-            method: "GET",
-            credentials: "include", // ✅ include cookies / auth
-          })
+        fetch("https://namaste-react-dido.onrender.com/api/menu/" + resId)
         const json=await data.json();
         setresInfo(json.data);
         
