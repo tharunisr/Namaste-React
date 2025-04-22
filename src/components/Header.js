@@ -10,8 +10,9 @@ import GrocerycartItems from "./GrocerycartItems";
 
 
 const Header=()=>{
-    const [btnnameReact,setNameReact]=useState("Login");
+    const [btnnameReact,setbtnName]=useState("Login");
     const {loggedInUser}=useContext(userContext);
+    const [isOpen,setIsOpen]=useState(false)
     
     // console.log(loggedInUser);
 
@@ -30,15 +31,16 @@ const Header=()=>{
     // console.log("Header Component");
     return (
         
-    <div className="bg-blue-100 flex justify-between shadow-sm"> 
-    <div className="logo-container">
-        <img className="w-[30%] bg-red-200" src={LOGO_URL} alt="logo"></img>
+    <div className="w-full bg-white flex justify-between shadow-sm sticky top-0 z-10 "> 
+    <div className="flex items-center gap-2">
+        <img className="w-[70] bg-red-200 rounded-full" src={LOGO_URL} alt="logo"></img>
+        <h1 className="font-bold text-lg ">Food Ordering App</h1>
     </div>
     
-    <div className="flex items-center">
-        <ul className="flex">
+   
+        <ul className="flex items-center">
             <li className="px-4">
-                online Status : {onlineStatus ? "✅" : "🔴" }
+                online : {onlineStatus ? "✅" : "🔴" }
             </li>
             <li className="px-4">
                 <Link to="/">Home</Link> 
@@ -64,22 +66,56 @@ const Header=()=>{
                 🛒Grocerycart - ({groceryItems.length} items)
                      </Link></li>
 
-
-
             <li>
                 <div>
             <button className="px-2  bg-gray-500 text-white rounded-md" onClick={()=> {
-                 btnnameReact==="Login" ? setNameReact("Logout") : setNameReact("Login");
+                 btnnameReact==="Login" ? setbtnName("Logout") : setbtnName("Login");
             }}>{btnnameReact}</button></div>
             </li>
             
             <li className="px-2 font-bold">
                 {loggedInUser}
             </li>
-
         </ul>
+
+             <div className="md:hidden">
+
+
+                 <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? "X" : "☰"}
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="md:hidden px-4 pb-4">
+          <ul className="flex flex-col space-y-2">
+            <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/grocery">Grocery</Link></li>
+            <li><Link to="/cart">🛒Cart - ({cartItems.length} items)</Link></li>
+            <li><Link to="/grocerycart">🛒Grocerycart - ({groceryItems.length} items)</Link></li>
+            <li>
+              <button
+                className="px-2 bg-gray-500 text-white rounded-md"
+                onClick={() => {
+                  btnnameReact === "Login" ? setbtnName("Logout") : setbtnName("Login");
+                }}
+              >
+                {btnnameReact}
+              </button>
+            </li>
+            <li className="font-bold">{loggedInUser}</li>
+          </ul>
+        </div>
+      )}
+      
+   
+
+
+
     </div>
-  </div>
 )}
 
 export default Header;

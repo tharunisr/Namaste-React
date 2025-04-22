@@ -5,6 +5,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
+
 // const express = require("express");
 // const cors = require("cors");
 // const dotenv = require("dotenv");
@@ -13,17 +14,12 @@ import dotenv from "dotenv";
 dotenv.config();
 
 
-const corsOptions = {
-    origin: "http://localhost:1234", // 👈 your frontend URL
-    methods: ["GET", "POST", "OPTIONS"],
-    credentials: true,
-  };
-  
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors(corsOptions));
+app.use(cors());
 
   
  
@@ -40,7 +36,7 @@ const spoofedHeaders = {
 // Route: Get list of restaurants
 app.get("/api/restaurants", async (req, res) => {
   try {
-    const swiggyUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.9252007&lng=78.1197754&collection=80435&tags=layout_CCS_PureVeg&sortBy=&filters=&type=rcv2&offset=0&page_type=null";
+    const swiggyUrl = process.env.SWIGGY_URL;
     console.log("🔗 Fetching from:", swiggyUrl);
 
     const response = await fetch(swiggyUrl, {
@@ -67,7 +63,7 @@ app.get("/api/restaurants", async (req, res) => {
 app.get("/api/menu/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const menuUrl = `${"https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.9252007&lng=78.1197754&restaurantId="}${id}`;
+    const menuUrl = `${process.env.SWIGGY_MENU}${id}`;
     console.log(id);
     console.log("📦 Fetching Menu for ID:", id);
     console.log("🔗 URL:", menuUrl);
