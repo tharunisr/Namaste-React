@@ -79,9 +79,9 @@ const Header=()=>{
             </li>
         </ul>
 
-        <div className="md:hidden">
+        <div className="md:hidden fixed top-6 right-4 z-50">
         <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
