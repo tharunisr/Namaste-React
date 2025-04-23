@@ -93,17 +93,17 @@ const Header=()=>{
       >
         <ul className="flex flex-col gap-4 text-sm font-medium text-gray-800">
           <li>Online: {onlineStatus ? "✅" : "⛔"}</li>
-          <li><Link to="/" >Home</Link></li>
-          <li><Link to="/about" >About Us</Link></li>
-          <li><Link to="/contact" >Contact Us</Link></li>
-          <li><Link to="/grocery">Grocery</Link></li>
-          <li className="font-bold">
-                <Link to="/cart">
+          <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+          <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+          <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
+          <li><Link to="/grocery" onClick={() => setIsOpen(false)}>Grocery</Link></li>
+          <li className="font-bold" onClick={() => setIsOpen(false)}>
+                <Link to="/cart" onClick={() => setIsOpen(false)}>
                 🛒Food - ({cartItems.length} items)
                      </Link></li>
 
         <li className="font-bold">
-                <Link to="/grocerycart">🛒Grocery - ({groceryItems.length} items)
+                <Link to="/grocerycart" onClick={() => setIsOpen(false)}>🛒Grocery - ({groceryItems.length} items)
                      </Link></li>
          
           <button
