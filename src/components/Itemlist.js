@@ -50,21 +50,19 @@ const Itemlist=({items,dummy})=>{
                 
                     </div>
 
-                    <div className="w-4/12 p-4">
-                       
-                        <div className="absolute ">
-                        <button className="bg-white text-green-600  p-2 rounded-lg shadow-lg mx-7 my-32 pl-10 pr-10 border border-gray-300 font-bold cursor-pointer hover:bg-gray-100" onClick={()=>handleAddItem(items)}>ADD</button>
-                       
-                        
-
+                    <div className="w-full sm:w-4/12 p-4 relative">
+                        <img className="rounded-xl w-full h-40 object-cover" 
+                        src={items?.card?.info?.imageId ? CDN_URL + items?.card?.info?.imageId
+                        : "https://media-assets.swiggy.com/swiggy/image/upload/dls-web/assets/images/placeholder-light.png"}
+                        alt={items?.card?.info?.name}
+                        />
+                        <div className="absolute left-1/2 transform -translate-x-1/2">
+                            <button className="bg-white text-green-600 px-6 py-2 rounded-lg shadow-md border 
+                            border-gray-300 font-bold hover:bg-gray-100"onClick={() => handleAddItem(items)}>ADD
+                            </button>
                         </div>
-                       
-                        <img className="rounded-lg h-40 w-40" src={items?.card?.info?.imageId ? CDN_URL + items?.card?.info?.imageId : "https://media-assets.swiggy.com/swiggy/image/upload/dls-web/assets/images/placeholder-light.png" } alt=""/> 
-                       
-                       
-       
                     </div>
-                </div>
+             </div>
             ))}
         </div>
     ) 

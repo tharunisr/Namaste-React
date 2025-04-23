@@ -5,6 +5,7 @@ import userContext from "../utils/userContext";
 import { useSelector } from "react-redux";
 import {LOGO_URL} from "../utils/constants"
 import GrocerycartItems from "./GrocerycartItems";
+import {Menu, X } from "lucide-react";
 
 
 
@@ -31,16 +32,16 @@ const Header=()=>{
     // console.log("Header Component");
     return (
         
-    <div className="w-full bg-white flex justify-between shadow-sm sticky top-0 z-10 "> 
-    <div className="flex items-center gap-2">
-        <img className="w-[70] bg-red-200 rounded-full" src={LOGO_URL} alt="logo"></img>
-        <h1 className="font-bold text-lg ">Food Ordering App</h1>
+    <div className="w-full bg-white flex justify-between shadow-sm sticky top-0 z-10 h-20"> 
+    <div className="flex items-center">
+        <img className="w-10  rounded-full" src={LOGO_URL} alt="logo" />
+        <h1 className="font-bold text-lg">FoodRush</h1>
     </div>
     
    
-        <ul className="flex items-center">
+        <ul className="hidden md:flex gap-4 items-center text-gray-800 text-sm font-medium">
             <li className="px-4">
-                online : {onlineStatus ? "✅" : "🔴" }
+                Online : {onlineStatus ? "✅" : "🔴" }
             </li>
             <li className="px-4">
                 <Link to="/">Home</Link> 
@@ -58,17 +59,17 @@ const Header=()=>{
     
             <li className="font-bold px-2">
                 <Link to="/cart">
-                🛒Cart - ({cartItems.length} items)
+                🛒Food - ({cartItems.length} items)
                      </Link></li>
 
         <li className="font-bold px-2">
                 <Link to="/grocerycart">
-                🛒Grocerycart - ({groceryItems.length} items)
+                🛒Grocery - ({groceryItems.length} items)
                      </Link></li>
 
             <li>
                 <div>
-            <button className="px-2  bg-gray-500 text-white rounded-md" onClick={()=> {
+            <button className="px-2  bg-gray-500 text-white rounded-lg" onClick={()=> {
                  btnnameReact==="Login" ? setbtnName("Logout") : setbtnName("Login");
             }}>{btnnameReact}</button></div>
             </li>
@@ -78,39 +79,45 @@ const Header=()=>{
             </li>
         </ul>
 
-             <div className="md:hidden">
-
-
-                 <button onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? "X" : "☰"}
+        <div className="md:hidden">
+        <button onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden px-4 pb-4">
-          <ul className="flex flex-col space-y-2">
-            <li>Online Status: {onlineStatus ? "✅" : "🔴"}</li>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-            <li><Link to="/grocery">Grocery</Link></li>
-            <li><Link to="/cart">🛒Cart - ({cartItems.length} items)</Link></li>
-            <li><Link to="/grocerycart">🛒Grocerycart - ({groceryItems.length} items)</Link></li>
-            <li>
-              <button
-                className="px-2 bg-gray-500 text-white rounded-md"
-                onClick={() => {
-                  btnnameReact === "Login" ? setbtnName("Logout") : setbtnName("Login");
-                }}
-              >
-                {btnnameReact}
-              </button>
-            </li>
-            <li className="font-bold">{loggedInUser}</li>
-          </ul>
-        </div>
-      )}
-      
+      {/* Slide-in Mobile Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 transform ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out z-40 md:hidden`}
+      >
+        <ul className="flex flex-col gap-4 text-sm font-medium text-gray-800">
+          <li>Online: {onlineStatus ? "✅" : "⛔"}</li>
+          <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+          <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+          <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
+          <li><Link to="/grocery" onClick={() => setIsOpen(false)}>Grocery</Link></li>
+          <li>
+            <Link to="/cart" onClick={() => setIsOpen(false)}>
+              🛒 {cartItems.length === 1 ? "1 item" : `${cartItems.length} items`}
+            </Link>
+          </li>
+          <li className="font-bold px-2">
+                <Link to="/grocerycart">
+                🛒Grocery - ({groceryItems.length} items)
+                     </Link></li>
+          <button
+            className="bg-gray-700 text-white px-3 py-1 rounded"
+            onClick={() => {
+              setbtnName(btnnameReact === "Login" ? "Logout" : "Login");
+              setIsOpen(false);
+            }}
+          >
+            {btnnameReact}
+          </button>
+          <li>{loggedInUser}</li>
+        </ul>
+      </div>
    
 
 

@@ -43,14 +43,14 @@ const Body=()=>{
 
 
     return listOfRestraunts.length ===0 ? (<Shimmer/>) : (
-    <div className="">
+    <div className="px-4 md:px-8">
 
-        <div className="flex">
-             <div className="m-4 p-4 flex items-center" >
-            <input type="text" data-testid="searchInput" className="border border-black" value={searchText} onChange={(e)=>{
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 py-6">
+             <div className="flex w-full md:w-1/2 gap-2 bg-gray-200 p-2 rounded-md" >
+            <input type="text" data-testid="searchInput" placeholder="Restaurant Name" className="w-full px-2 py-1 rounded-md outline-none text-gray-700" value={searchText} onChange={(e)=>{
                 setSearchText(e.target.value);
             }}/>
-            <button className="px-2 py-1 bg-blue-300 rounded-md m-4" onClick={
+            <button className=" bg-blue-500 m-4 hover:bg-blue-700 text-white px-3 py-1 rounded-md" onClick={
                 ()=>{
                     const filterRestraunts= listOfRestraunts.filter((res)=>{
                         return res.card.card.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -61,7 +61,7 @@ const Body=()=>{
             }>Search</button>
         </div>
         <div className="m-4 p-4 flex items-center">
-        <button className="px-2 py-1 bg-gray-300 rounded-md" onClick={
+        <button className=" bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md" onClick={
                 ()=>{
                     const filtered=listOfRestraunts.filter((res)=>{
                     
@@ -73,14 +73,15 @@ const Body=()=>{
 
         </div>
 
-        <div className="m-4 p-4 flex items-center">
-        <label>UserName : </label>
-        <input className="border border-black m-5" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)}></input>
+        <div className="flex items-center">
+        <label className="font-semibold">User Name : </label>
+
+        <input className="bg-gray-200 px-2 mx-2 py-1 rounded-md text-gray-700 outline-none" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)}></input>
 
         </div>
             
         </div>
-        <div className="flex flex-wrap ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-fr">
             {/* <RestrauntCard resData={resList[0]} />
             <RestrauntCard resData={resList[1]} /> */}
             {/* const listOfRestaurants = response.restaurants; */}

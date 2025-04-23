@@ -25,7 +25,7 @@ const Contact = () => {
 
   return (
     <div className="bg-white min-h-screen flex items-center justify-center px-4">
-      <div className="w-full max-w-2xl bg-gray-50 p-10 rounded-2xl shadow-xl">
+      <div className="w-full max-w-md bg-gray-50 p-10 rounded-2xl shadow-xl">
         <h2 className="text-4xl font-semibold text-center text-gray-800 mb-8">Get in Touch</h2>
 
         <form className="space-y-5">
