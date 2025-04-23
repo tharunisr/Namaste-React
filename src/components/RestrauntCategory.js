@@ -1,5 +1,7 @@
 import Itemlist from "./Itemlist";
 import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
+
 
 const RestrauntCategory=({data, isOpen, setIsOpen ,setshowIndex,dummy})=>{
     // const [showItem,setshowItem]=useState(false);
@@ -21,7 +23,7 @@ const RestrauntCategory=({data, isOpen, setIsOpen ,setshowIndex,dummy})=>{
               {data.title} ({data.itemCards.length})
             </span>
             <span className="text-xl transform transition-transform duration-200 ease-in-out">
-              {isOpen ? "⮝" : "⮟"}
+              {isOpen ? <ChevronUp /> : <ChevronDown />}
             </span>
           </button>
         </div>

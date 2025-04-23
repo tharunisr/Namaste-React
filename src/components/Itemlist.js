@@ -56,7 +56,7 @@ const Itemlist=({items,dummy})=>{
                         : "https://media-assets.swiggy.com/swiggy/image/upload/dls-web/assets/images/placeholder-light.png"}
                         alt={items?.card?.info?.name}
                         />
-                        <div className="absolute left-1/2 transform -translate-x-1/2">
+                        <div className="absolute sm:bottom-3 left-1/2 transform -translate-x-1/2">
                             <button className="bg-white text-green-600 px-6 py-2 rounded-lg shadow-md border 
                             border-gray-300 font-bold hover:bg-gray-100"onClick={() => handleAddItem(items)}>ADD
                             </button>

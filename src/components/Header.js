@@ -86,26 +86,26 @@ const Header=()=>{
       </div>
 
       {/* Slide-in Mobile Menu */}
-      <div
+     {isOpen && <div
         className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out z-40 md:hidden`}
       >
         <ul className="flex flex-col gap-4 text-sm font-medium text-gray-800">
           <li>Online: {onlineStatus ? "✅" : "⛔"}</li>
-          <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-          <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
-          <li><Link to="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
-          <li><Link to="/grocery" onClick={() => setIsOpen(false)}>Grocery</Link></li>
-          <li>
-            <Link to="/cart" onClick={() => setIsOpen(false)}>
-              🛒 {cartItems.length === 1 ? "1 item" : `${cartItems.length} items`}
-            </Link>
-          </li>
-          <li className="font-bold px-2">
-                <Link to="/grocerycart">
-                🛒Grocery - ({groceryItems.length} items)
+          <li><Link to="/" >Home</Link></li>
+          <li><Link to="/about" >About Us</Link></li>
+          <li><Link to="/contact" >Contact Us</Link></li>
+          <li><Link to="/grocery">Grocery</Link></li>
+          <li className="font-bold">
+                <Link to="/cart">
+                🛒Food - ({cartItems.length} items)
                      </Link></li>
+
+        <li className="font-bold">
+                <Link to="/grocerycart">🛒Grocery - ({groceryItems.length} items)
+                     </Link></li>
+         
           <button
             className="bg-gray-700 text-white px-3 py-1 rounded"
             onClick={() => {
@@ -119,7 +119,7 @@ const Header=()=>{
         </ul>
       </div>
    
-
+          }
 
 
     </div>
